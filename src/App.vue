@@ -1,26 +1,28 @@
 <template>
   <div id="app">
-    <button class="btn btn-primary" @click="openModal">點我</button>
-    <modal ref="modal"></modal>
+    <nav class="navbar navbar-dark bg-secondary">
+      <span class="navbar-brand mb-0 h1">Vue組件展示</span>
+    </nav>
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-2 no-padding">
+          <sidebar></sidebar>
+        </div>
+        <div class="col-10 no-padding bg-dark">
+          <router-view/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import ConfirmModal from "@/components/ConfirmModal";
-import {ModalData} from "@/model/ModalData";
+import Sidebar from "@/components/Sidebar";
 
 export default {
   name: 'App',
   components: {
-    modal: ConfirmModal
-  },
-  methods: {
-    openModal() {
-      const modalData = new ModalData();
-      modalData.title = '測試標題'
-      modalData.body = '測試內文'
-      this.$refs.modal.openModal(modalData);
-    }
+    sidebar: Sidebar
   }
 }
 </script>
@@ -30,8 +32,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.no-padding {
+  padding: 0!important;
 }
 </style>

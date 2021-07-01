@@ -1,4 +1,4 @@
-export class ModalData {
+export class ModalModel {
     constructor(value, title, body) {
         if (title) {
             this.title = title

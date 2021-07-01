@@ -1,4 +1,4 @@
-# lab-jest-unit
+# lab-vue-unit
 
 ## Project setup
 ```

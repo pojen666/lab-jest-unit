@@ -1,6 +1,6 @@
 <template>
   <div class="modal fade" ref="modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">
@@ -21,7 +21,7 @@
 
 <script>
 import {Modal} from 'bootstrap'
-import {ModalData} from "@/model/ModalData";
+import {ModalModel} from "@/model/ModalModel";
 
 export default {
   name: "ConfirmModal",
@@ -34,13 +34,13 @@ export default {
     }
   },
   methods: {
-    openModal(modalData) {
+    openModal(modalModel) {
       this.modal = new Modal(this.$refs.modal);
-      if (modalData instanceof ModalData) {
-        this.body = modalData.body;
-        this.title = modalData.title;
-        if (modalData.value) {
-          this.value = modalData.value;
+      if (modalModel instanceof ModalModel) {
+        this.body = modalModel.body;
+        this.title = modalModel.title;
+        if (modalModel.value) {
+          this.value = modalModel.value;
         } else {
           this.value = undefined
         }

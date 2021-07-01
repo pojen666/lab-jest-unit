@@ -1,12 +1,12 @@
 import {shallowMount} from "@vue/test-utils";
 import ConfirmModal from "@/components/ConfirmModal";
-import {ModalData} from "@/model/ModalData";
+import {ModalModel} from "@/model/ModalModel";
 import Vue from "vue";
 
 describe('ConfirmModal.vue', () => {
 
     it('測試傳遞標題和內文', async () => {
-        const modalData = new ModalData();
+        const modalData = new ModalModel();
         modalData.title = '測試標題'
         modalData.body = '測試內文'
         const wrapper = shallowMount(ConfirmModal)
@@ -23,7 +23,7 @@ describe('ConfirmModal.vue', () => {
     })
 
     it('測試確認後回傳參數', async () => {
-        const modalData = new ModalData('test value', '測試標題', '測試內文');
+        const modalData = new ModalModel('test value', '測試標題', '測試內文');
         const wrapper = shallowMount(ConfirmModal)
         const vm = wrapper.vm;
         vm.openModal(modalData)
