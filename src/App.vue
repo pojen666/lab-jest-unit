@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-dark bg-secondary">
-      <span class="navbar-brand mb-0 h1">Vue組件展示</span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <span class="navbar-brand mb-0 h5">Vue組件展示</span>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            {{currentUnit}}
+          </li>
+        </ul>
+      </div>
     </nav>
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
@@ -23,6 +30,11 @@ export default {
   name: 'App',
   components: {
     sidebar: Sidebar
+  },
+  computed: {
+    currentUnit: function() {
+      return this.$store.getters.currentUnit
+    }
   }
 }
 </script>

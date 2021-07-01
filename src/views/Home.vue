@@ -7,6 +7,9 @@
 <script>
 
 export default {
-  name: 'Home'
+  name: 'Home',
+  created() {
+    this.$store.dispatch('changeCurrentUnit', '說明頁面')
+  },
 }
 </script>
