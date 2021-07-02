@@ -2,7 +2,9 @@
   <div>
     <br>
     <div class="col-12">
-      <button class="btn btn-secondary" @click="getJwt">取得jwt</button>
+      <div class="col-12">
+        <button class="btn btn-secondary" @click="getJwt">取得jwt</button>
+      </div>
       <div class="col-12 text-light">回傳結果為: <span>{{jwt}}</span></div>
     </div>
   </div>
