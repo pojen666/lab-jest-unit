@@ -7,14 +7,13 @@ import ModalView from "@/views/ModalView";
 import currentUnit from "@/store/modules/current-unit";
 import Home from "@/views/Home";
 
-const localVue = createLocalVue()
-localVue.use(VueRouter)
-localVue.use(Vuex)
-
-
 describe('router', () => {
 
     it('test routing by router', async () => {
+        const localVue = createLocalVue()
+        localVue.use(VueRouter)
+        localVue.use(Vuex)
+
         const store = new Vuex.Store({
             modules: {
                 currentUnit

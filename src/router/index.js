@@ -1,24 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import routes from "@/router/modules/routes";
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/modal',
-    name: 'ModalView',
-    component: () => import('../views/ModalView')
-  }
-]
-
 const router = new VueRouter({
-  routes
+    routes
 })
 
 export default router
