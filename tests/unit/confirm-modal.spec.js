@@ -17,7 +17,7 @@ describe('ConfirmModal.vue', () => {
         const vm = wrapper.vm;
         expect(Object.keys(vm.$options.methods).length).toBe(2)
         expect(vm.$options.methods).toHaveProperty('openModal')
-        vm.openModal(modalData)
+        vm.$options.methods['openModal'].call(vm, modalData)
         await localVue.nextTick()
         expect(vm.$data['modal']).not.toBeNull()
         expect(vm.$data['title']).toBe(modalData.title)
@@ -30,7 +30,7 @@ describe('ConfirmModal.vue', () => {
         const modalData = new ModalModel('test value', '測試標題', '測試內文');
         const wrapper = shallowMount(ConfirmModal, {localVue})
         const vm = wrapper.vm;
-        vm.openModal(modalData)
+        vm.$options.methods['openModal'].call(vm, modalData)
         await wrapper.find('button.btn-dark').trigger('click');
         expect(wrapper.emitted()).toHaveProperty('confirm')
         expect(wrapper.emitted()['confirm'][0]).toEqual([modalData.value])
