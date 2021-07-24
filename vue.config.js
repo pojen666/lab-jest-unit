@@ -1,5 +1,7 @@
 module.exports = {
-    publicPath: './',
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/lab-vue-unit/'
+        : '/',
     configureWebpack:{
         entry:'./src/main.js',
         optimization: {
