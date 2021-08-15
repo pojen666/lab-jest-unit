@@ -10,7 +10,7 @@
         <div class="modal-body">
           {{ body }}
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
           <button type="button" class="btn btn-dark" @click="confirm">確認</button>
         </div>

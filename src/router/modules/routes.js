@@ -15,6 +15,11 @@ const routes = [
         path: '/jwt',
         name: 'Jwt',
         component: () => import('../../views/Jwt')
+    },
+    {
+        path: '/transform-by-scroll',
+        name: '滑動視窗時移動區塊',
+        component: () => import('../../views/TransformByScrollView')
     }
 ]
 
