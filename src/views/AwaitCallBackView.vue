@@ -13,14 +13,15 @@
           執行區塊
         </div>
         <div class="card-body">
-          <span v-if="isStart">start waiting</span>
-          <br>
-          <span v-if="isFinished">finish waiting</span>
+          <span v-if="isStart">start test</span>
           <br>
           <span v-if="text">{{ text }}</span>
+          <br>
+          <span v-if="isFinished">finish test</span>
         </div>
         <div class="card-footer text-center">
-          <button class="btn btn-dark" @click="startTesting">執行</button>
+          <button class="btn btn-dark mr-1" @click="startTesting">執行</button>
+          <button class="btn btn-light text-dark" @click="clean">清空</button>
         </div>
       </div>
     </div>
@@ -42,7 +43,6 @@ export default {
     oldStyleAsync(callback) {
       this.isStart = true
       setTimeout(callback, 3000)
-      this.isFinished = true
     },
     async testCallback() {
       const oldStyleAsync = this.oldStyleAsync
@@ -54,7 +54,14 @@ export default {
       })
     },
     async startTesting() {
+      this.clean()
       this.text = await this.testCallback()
+      this.isFinished = true
+    },
+    clean() {
+      this.isStart = false
+      this.isFinished = false
+      this.text = undefined
     }
   }
 }
