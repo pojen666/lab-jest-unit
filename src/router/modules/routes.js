@@ -20,6 +20,11 @@ const routes = [
         path: '/transform-by-scroll',
         name: '滑動視窗時移動區塊',
         component: () => import('../../views/TransformByScrollView')
+    },
+    {
+        path: '/await-call-back',
+        name: '用promise包裝回傳callback',
+        component: () => import('../../views/AwaitCallBackView')
     }
 ]
 
