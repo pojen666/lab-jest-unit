@@ -63,6 +63,9 @@ export default {
       this.isFinished = false
       this.text = undefined
     }
+  },
+  created() {
+    this.$store.dispatch('changeCurrentUnit', '展示用promise包裝回傳callback')
   }
 }
 </script>
