@@ -3,7 +3,7 @@
     <br>
     <div class="col-12">
       <div class="col-12">
-        <auto-complete :placeholder="'請輸入關鍵字或證號'"
+        <auto-complete :placeholder="'請輸入關鍵字出現下拉選單後選擇'"
                        :service="queryService"
                        :query-function="queryService.getSomeFeatureData"
                        @selectedId="selectedId">
@@ -33,6 +33,9 @@ export default {
     selectedId(id) {
       this.no = id
     }
+  },
+  created() {
+    this.$store.dispatch('changeCurrentUnit', '展示自動完成組件')
   }
 }
 </script>
