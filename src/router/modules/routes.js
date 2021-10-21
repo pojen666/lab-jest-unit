@@ -25,6 +25,11 @@ const routes = [
         path: '/await-call-back',
         name: '用promise包裝回傳callback',
         component: () => import('../../views/AwaitCallBackView')
+    },
+    {
+        path: '/auto-complete',
+        name: '自動完成組件',
+        component: () => import('../../views/AutoCompleteView')
     }
 ]
 

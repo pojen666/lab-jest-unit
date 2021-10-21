@@ -1,6 +1,6 @@
 import {createLocalVue, shallowMount} from "@vue/test-utils";
 import ConfirmModal from "@/components/ConfirmModal";
-import {ModalModel} from "@/model/ModalModel";
+import {ModalModel} from "@/model/modal-model";
 
 describe('ConfirmModal.vue', () => {
     let localVue

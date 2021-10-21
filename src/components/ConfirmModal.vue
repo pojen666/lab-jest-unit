@@ -21,7 +21,7 @@
 
 <script>
 import {Modal} from 'bootstrap'
-import {ModalModel} from "@/model/ModalModel";
+import {ModalModel} from "@/model/modal-model";
 
 export default {
   name: "ConfirmModal",

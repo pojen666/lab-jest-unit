@@ -32,7 +32,7 @@
 
 <script>
 import ConfirmModal from "@/components/ConfirmModal";
-import {ModalModel} from "@/model/ModalModel";
+import {ModalModel} from "@/model/modal-model";
 
 export default {
   name: "ModalView",
